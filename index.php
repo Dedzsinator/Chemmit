@@ -6,7 +6,6 @@
     <title>Chemmit</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <br>
@@ -36,16 +35,16 @@
                 <h5 class="card-title text-center">Bejelentkezés</h5>
                 <form class="form-signin" action="login.php" method="post">
                 <div class="form-label-group">
-                    <label for="username">Felhasználónév</label>
-                    <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+                    <br>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Felhasználónév" required autofocus>
                 </div>
 
                 <div class="form-label-group">
-                    <label for="pasword">Jelszó</label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                <br>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Jelszó" required>
                 </div>
                 <br>
-                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Bejelentkezés</button>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="login_btn">Bejelentkezés</button>
                 </form>
                 <br>
                 <div class="text-center">
