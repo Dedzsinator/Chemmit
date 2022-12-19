@@ -1,10 +1,10 @@
 <?php
         session_start();
-        if($_SESSION['status'] !="login"){
-            header("location:../index.php");
+        include_once "../php/config.php";
+        if(!isset($_SESSION['unique_id'])){
+          header("location: login.php");
         }
         $cat = $_GET['category'];
-        include '../config.php';
     ?>
 
 <!DOCTYPE html>
@@ -22,8 +22,9 @@
 <header>
     <ul class="list">
         <li><a href="./index.php">Kezdőlap</a></li>
+        <li><a href="../users.php">Csevegés</a></li>
         <li class="dropdown">
-            <button class="dropbtn">Dropdown
+            <button class="dropbtn">Kategóriák
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
@@ -93,8 +94,10 @@
                     $category = $post["category"];
                     $title = $post["title"];
                     $time = $post["time"];
-                    $fc = $username[0];
+                    $sql = mysqli_query($db, "SELECT * FROM user WHERE username = '$username'");
+                    $row = mysqli_fetch_assoc($sql);
 
+                    $img = $row['img'];
                     echo "
                     <div class=\"\">
                         <div class=\"container-fluid mt-100\">
@@ -103,7 +106,7 @@
                                     <div class=\"card mb-4\">
                                         <div class=\"card-header\">
                                             <div class=\"media flex-wrap w-100 align-items-center\"> 
-                                                <div data-letters=\"$fc\" class=\"\"></div>
+                                                <img style=\"border-radius:50%; margin-right:10px\" src=\"../php/images/$img\">
                                                 <div class=\"media-body\"> <a href=\"javascript:void(0)\" data-abc=\"true\">$username</a>
                                                     <div class=\"text-muted small\">$time</div>
                                                 </div>
@@ -132,14 +135,16 @@
                         $username = $reply["username"];
                         $message = $reply["message"];
                         $time = $reply["time"];
-                        $fc = $username[0];
+                        $sql = mysqli_query($db, "SELECT * FROM user WHERE username = '$username'");
+                        $row2 = mysqli_fetch_assoc($sql);
 
+                        $img2 = $row2['img'];
                         echo "
                             <!-- <h6>Hozzászólások :</h6> -->
                             <ul class=\"commentList\">
                                 <li>
                                     <div class=\"commenterImage\">
-                                        <p data-letters=\"$fc\"></p>
+                                    <img style=\"border-radius:50%; margin-right:10px\" src=\"../php/images/$img\">
                                     </div>
                                     <div class=\"commentText\">
                                         <p><b>$username</b></p>

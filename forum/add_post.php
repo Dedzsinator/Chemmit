@@ -1,8 +1,11 @@
 <?php
-include '../config.php';
+include '../php/config.php';
 session_start();
+$sql = mysqli_query($db, "SELECT * FROM user WHERE unique_id = {$_SESSION['unique_id']}");
+$row = mysqli_fetch_assoc($sql);
 
-$username = $_SESSION['username'];
+
+$username = $row['username'];
 $message = $_POST['message'];
 $cat = $_POST['category'];
 $title = $_POST['title'];

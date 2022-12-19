@@ -14,6 +14,7 @@ html {
   --form-focus: rgb(231, 231, 231);
   --btn-danger-f: #ff5252;
   --social-hover: rgb(61, 61, 61);
+  --hover: #d1d1d1;
 
 }
 /*dark theme*/
@@ -30,11 +31,11 @@ html[data-theme="dark"] {
   --form-focus: rgb(88, 88, 88);
   --btn-danger-f: #ffbf34;
   --social-hover:rgb(202, 202, 202);
-
+  --hover: #5e5e5e;
 }
 
 body {
-  margin: 0;
+  margin: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: .88rem;
   font-weight: 400;
@@ -414,6 +415,10 @@ html.transition *:after {
     list-style-type: none;
     background-color: var(--bg-panel);
     overflow: hidden;
+}
+
+.list li :hover{
+  background-color: var(--hover);
 }
 
 .list a {
