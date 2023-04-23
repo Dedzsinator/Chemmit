@@ -6,7 +6,6 @@
 ?>
 
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
